@@ -147,6 +147,52 @@
             height: auto;
         }
 
+        .appointment-form {
+            background: #fff;
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+
+        .appointment-form h3 {
+            font-size: 1.8em;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .appointment-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .appointment-form label {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .appointment-form input,
+        .appointment-form textarea,
+        .appointment-form button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .appointment-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .appointment-form button:hover {
+            background-color: #45a049;
+        }
+
         footer {
             background-color: #333;
             color: white;
@@ -230,11 +276,31 @@
         <p>सर्माने से कुछ नहीं होगा! अपने दिल की हर बात हमसे कहें। समाधान की गारंटी!<br>हमारे पास 10+ वर्षों का अनुभव है और हमने हजारों लोगों को उनकी समस्याओं का समाधान दिलाया है।</p>
     </div>
 
+    <!-- Appointment Form -->
+    <div class="appointment-form">
+        <h3>अपॉइंटमेंट लें</h3>
+        <form action="#" method="POST">
+            <label for="name">नाम:</label>
+            <input type="text" id="name" name="name" placeholder="अपना नाम दर्ज करें" required>
+
+            <label for="email">ईमेल:</label>
+            <input type="email" id="email" name="email" placeholder="अपना ईमेल दर्ज करें" required>
+
+            <label for="date">मिलने की तारीख:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="message">संदेश:</label>
+            <textarea id="message" name="message" rows="4" placeholder="अपनी समस्या का विवरण दर्ज करें"></textarea>
+
+            <button type="submit">अपॉइंटमेंट बुक करें</button>
+        </form>
+    </div>
+
     <!-- Contact Button -->
     <div class="contact-button">
-        <a href="tel:9140032705">
+        <a href="tel:9112345678">
             <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/IPhone_icon.png" alt="Call Icon">
-            संपर्क करें: 9140032705
+            संपर्क करें: 9112345678
         </a>
     </div>
 
