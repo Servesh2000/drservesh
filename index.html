@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>डॉ. सर्वेश सेठ MCA वाले - सर्वेश बाबा</title>
+    <title>डॉ. सर्वेश सेठ - जीवन की हर समस्या का समाधान</title>
     <style>
+        /* General Styling */
         * {
             margin: 0;
             padding: 0;
@@ -12,212 +13,237 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
             color: #333;
-            margin: 0;
-            padding: 0;
         }
 
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         header h1 {
-            font-size: 2em;
+            font-size: 2.5em;
+            animation: fadeIn 2s infinite alternate;
         }
 
-        .hero-image {
-            width: 100%;
-            height: 300px;
-            background-image: url('blank');
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 20px;
+        @keyframes fadeIn {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
 
-        .container {
-            width: 80%;
-            margin: 20px auto;
-        }
-
-        .intro {
+        .profile-section {
             text-align: center;
-            margin-bottom: 30px;
+            margin: 40px 0;
         }
 
-        .intro h2 {
-            font-size: 1.5em;
-            color: #333;
-        }
-
-        .intro p {
-            font-size: 1.1em;
-            color: #777;
-        }
-
-        .form-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-container h3 {
-            font-size: 1.3em;
+        .profile-section img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #4CAF50;
             margin-bottom: 15px;
+        }
+
+        .profile-section h2 {
+            font-size: 2em;
             color: #4CAF50;
-        }
-
-        .form-container label {
-            display: block;
-            margin: 10px 0 5px;
-            color: #333;
-        }
-
-        .form-container input, .form-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        .form-container button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-
-        .form-container button:hover {
-            background-color: #45a049;
-        }
-
-        .problem-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .problem-list .problem {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .problem-list .problem:hover {
-            transform: translateY(-10px);
-        }
-
-        .problem-list h4 {
-            color: #4CAF50;
-            font-size: 1.2em;
             margin-bottom: 10px;
         }
 
-        .problem-list p {
-            color: #777;
+        .profile-section p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .content-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content-section h3 {
+            font-size: 1.8em;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .content-section ul li {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section ul li a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .content-section ul li a:hover + .content-popup {
+            display: block;
+        }
+
+        .content-popup {
+            display: none;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 10px auto;
+            text-align: justify;
+        }
+
+        .contact-button {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .contact-button a {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.3em;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-button a:hover {
+            background-color: #45a049;
+        }
+
+        .contact-button img {
+            width: 30px;
+            height: auto;
         }
 
         footer {
-            text-align: center;
-            padding: 20px;
             background-color: #333;
             color: white;
-            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
         }
 
+        .footer-content {
+            font-size: 1.2em;
+        }
+
+        .footer-content a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                width: 90%;
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .profile-section img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .content-section ul li {
+                font-size: 1em;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>स्वागत है डॉ. सर्वेश सेठ MCA वाले - सर्वेश बाबा में</h1>
+        <h1>जीवन में कैसी समस्या? सबका समाधान सर्वेश बाबा करेंगे!</h1>
     </header>
 
-    <div class="hero-image"></div>
-
-    <div class="container">
-        <div class="intro">
-            <h2>क्या आपको व्यक्तिगत समस्याओं का समाधान चाहिए?</h2>
-            <p>डॉ. सर्वेश सेठ (सर्वेश बाबा) आपकी सभी समस्याओं का समाधान करने के लिए यहाँ हैं। चाहे वो प्यार, शादी, करियर या रिश्ते हों, बस हमें अपनी समस्या बताएं और हम आपको एक बेहतरीन समाधान देंगे!</p>
-        </div>
-
-        <div class="form-container">
-            <h3>अपनी समस्या बताएं</h3>
-            <form id="problemForm">
-                <label for="name">आपका नाम:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="problem">अपनी समस्या का विवरण बताएं:</label>
-                <textarea id="problem" name="problem" rows="4" required></textarea>
-
-                <button type="submit">सबमिट करें</button>
-            </form>
-        </div>
-
-        <div class="problem-list">
-            <div class="problem">
-                <h4>शादी के मुद्दे</h4>
-                <p>क्या आप शादी के मुद्दों से जूझ रहे हैं? क्या आपको जीवन साथी नहीं मिल रहा है? हम आपके लिए समाधान लाएंगे!</p>
-            </div>
-            <div class="problem">
-                <h4>प्यार के मामले</h4>
-                <p>क्या आपकी प्रेमिका ने आपको छोड़ दिया? दिल टूट गया है? हम आपका प्यार वापस लाएंगे!</p>
-            </div>
-            <div class="problem">
-                <h4>करियर मार्गदर्शन</h4>
-                <p>क्या आप अपने करियर में फंसे हुए हैं? आगे बढ़ने के लिए मार्गदर्शन चाहिए? हम आपको दिशा दिखाएंगे!</p>
-            </div>
-            <div class="problem">
-                <h4>परिवारिक विवाद</h4>
-                <p>क्या आपके परिवार में कोई विवाद चल रहा है? शांति और सामंजस्य लाने के लिए हम आपकी मदद करेंगे!</p>
-            </div>
-            <div class="problem">
-                <h4>स्वास्थ्य और कल्याण</h4>
-                <p>क्या आप स्वास्थ्य समस्याओं से जूझ रहे हैं? हम आपको बेहतर स्वास्थ्य की दिशा में मार्गदर्शन करेंगे!</p>
-            </div>
-            <div class="problem">
-                <h4>व्यक्तिगत विकास</h4>
-                <p>क्या आप जीवन में फंसे हुए महसूस कर रहे हैं? आत्मिक मार्गदर्शन चाहिए? हम आपको आपके लक्ष्य तक पहुँचने में मदद करेंगे!</p>
-            </div>
-        </div>
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <img src="https://assets.onecompiler.app/436amezvc/436akwrkr/myself.jpg" alt="सर्वेश बाबा">
+        <h2>डॉ. सर्वेश सेठ (MCA)</h2>
+        <p>आपकी हर व्यक्तिगत, पारिवारिक, और मानसिक समस्या का समाधान करने के लिए तैयार!</p>
     </div>
 
+    <!-- Content Section -->
+    <div class="content-section">
+        <h3>आपकी सभी समस्याओं का हल</h3>
+        <p>चाहे वह तलाक का मामला हो, शादी का विवाद, प्यार का दर्द, करियर की चिंता, या जीवन में आत्मिक शांति का सवाल हो – सर्वेश बाबा के पास हर समस्या का समाधान है।</p>
+
+        <h3>हम किन समस्याओं को हल करते हैं?</h3>
+        <ul>
+            <li>💔 <a href="#">तलाक और रिश्ते के झगड़े</a>
+                <div class="content-popup">तलाक और रिश्तों के झगड़ों में सही समाधान पाने के लिए विश्वास और संवाद आवश्यक है। हमारी सेवा आपको भावनात्मक और व्यावहारिक सहायता प्रदान करती है।</div>
+            </li>
+            <li>💌 <a href="#">प्यार में असफलता और ब्रेकअप</a>
+                <div class="content-popup">प्यार में असफलता कभी-कभी नई शुरुआत का अवसर होती है। हमारे पास आपके दिल के दर्द को दूर करने और आगे बढ़ने के लिए सही उपाय हैं।</div>
+            </li>
+            <li>📈 <a href="#">करियर और नौकरी में बाधा</a>
+                <div class="content-popup">करियर और नौकरी में आने वाली बाधाओं को दूर करने के लिए सही योजना और प्रेरणा की आवश्यकता होती है। हमारी सेवाएं आपको सफलता दिलाने में मदद करेंगी।</div>
+            </li>
+            <li>👨‍👩‍👧‍👦 <a href="#">पारिवारिक विवाद और असहमति</a>
+                <div class="content-popup">पारिवारिक विवादों का समाधान संवाद और समझ से ही संभव है। हमारी सेवा आपके परिवार को एकजुट करने में मदद करती है।</div>
+            </li>
+            <li>🕊️ <a href="#">मानसिक शांति और तनाव का समाधान</a>
+                <div class="content-popup">तनाव से निपटने के लिए ध्यान और सकारात्मक सोच को अपनाएं। हमारे विशेषज्ञ आपकी मानसिक शांति लौटाने में मदद करेंगे।</div>
+            </li>
+            <li>🌟 <a href="#">आत्मिक विकास और प्रेरणा</a>
+                <div class="content-popup">आत्मिक विकास के लिए आत्मनिरीक्षण और सही मार्गदर्शन आवश्यक है। हमारे पास आपको प्रेरित करने और सही दिशा देने के साधन हैं।</div>
+            </li>
+        </ul>
+
+        <h3>क्यों सर्वेश बाबा?</h3>
+        <p>सर्माने से कुछ नहीं होगा! अपने दिल की हर बात हमसे कहें। समाधान की गारंटी!<br>हमारे पास 10+ वर्षों का अनुभव है और हमने हजारों लोगों को उनकी समस्याओं का समाधान दिलाया है।</p>
+    </div>
+
+    <!-- Contact Button -->
+    <div class="contact-button">
+        <a href="tel:9140032705">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/IPhone_icon.png" alt="Call Icon">
+            संपर्क करें: 9140032705
+        </a>
+    </div>
+
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 डॉ. सर्वेश सेठ MCA वाले | सभी अधिकार सुरक्षित</p>
+        <div class="footer-content">
+            &copy; 2025 डॉ. सर्वेश सेठ | जीवन की हर समस्या का समाधान <br>
+            <a href="privacy.html">गोपनीयता नीति</a> | <a href="terms.html">नियम और शर्तें</a>
+        </div>
     </footer>
-
-    <script>
-        document.getElementById('problemForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const problem = document.getElementById('problem').value;
-
-            if(name && problem) {
-                alert('धन्यवाद, ' + name + '. आपकी समस्या सबमिट कर दी गई है। डॉ. सर्वेश सेठ आपको शीघ्र मार्गदर्शन देंगे!');
-                document.getElementById('name').value = '';
-                document.getElementById('problem').value = '';
-            } else {
-                alert('कृपया दोनों फील्ड भरें!');
-            }
-        });
-    </script>
 </body>
 </html>
